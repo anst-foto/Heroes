@@ -1,4 +1,4 @@
-﻿namespace Heroes.Core;
+﻿namespace Heroes.Core.Dragonflies;
 
 public class DragonflyWarrior : Dragonfly, IWarrior
 {

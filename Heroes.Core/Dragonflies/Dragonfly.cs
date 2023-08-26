@@ -1,4 +1,4 @@
-﻿namespace Heroes.Core;
+﻿namespace Heroes.Core.Dragonflies;
 
 public abstract class Dragonfly : Hero
 {

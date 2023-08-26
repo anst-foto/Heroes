@@ -1,4 +1,4 @@
-﻿namespace Heroes.Core;
+﻿namespace Heroes.Core.Bugs;
 
 public class BugMedic : Bug, IMedic
 {

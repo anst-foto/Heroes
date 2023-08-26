@@ -68,4 +68,34 @@ class BugMedic {
 + Heal(hero : Hero) : void
 }
 
+enum HeroType {
+Default
+Bug
+Dragonfly
+}
+
+enum SpecType {
+Default
+Medic
+Warrior
+}
+
+HeroType <--* HeroBuilder
+SpecType <--* HeroBuilder
+Hero <--o HeroBuilder
+HeroBuilder <--o HeroBuilder
+class HeroBuilder {
+- name : string
+- heroType : HeroType
+- specType : SpecType
++ AddName(name : string) : HeroBuilder
++ SetHeroType(heroType : HeroType) : HeroBuilder
++ SetSpecType(specType : SpecType) : HeroBuilder
++ Builder() : Hero
+}
+BugMedic <.. HeroBuilder
+BugWarrior <.. HeroBuilder
+DragonflyMedic <.. HeroBuilder
+DragonflyWarrior <.. HeroBuilder
+
 @enduml

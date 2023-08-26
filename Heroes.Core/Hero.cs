@@ -7,6 +7,7 @@ public abstract class Hero
     public string Name { get; init; }
 
     private int health;
+
     public int Health
     {
         get => this.health;

@@ -6,10 +6,7 @@ public class BugWarrior : Bug, IWarrior
 
     public int Damage { get; init; }
 
-    public BugWarrior(string name) : base(name)
-    {
-        this.Damage = DAMAGE_RATE;
-    }
+    public BugWarrior(string name) : base(name) => this.Damage = DAMAGE_RATE;
 
 
     public void Attack(Hero hero) => hero.Health -= this.Damage;

@@ -1,0 +1,61 @@
+﻿@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Hero {
+# name : string
+# health : int
+
+# Hero(name : string, health : int)
+}
+
+Hero <|-- Dragonfly
+abstract class Dragonfly {
+- {static} HEALTH : int
+# Dragonfly(name : string, health : int)
+}
+
+Hero <-- Medic
+interface Medic {
++ {abstract} Heal(hero : Hero) : void
+}
+
+Hero <-- Warrior
+interface Warrior {
++ {abstract} Attack(hero : Hero) : void
+}
+
+Hero <|-- Bug
+abstract class Bug {
+- {static} HEALTH : int
+# Bug(name : string, health : int)
+}
+
+Dragonfly <|-- DragonflyMedic
+Medic <|.. DragonflyMedic
+class DragonflyMedic {
++ DragonflyMedic(name : string)
++ Heal(hero : Hero) : void
+}
+
+Dragonfly <|-- DragonflyWarrior
+Warrior <|.. DragonflyWarrior
+class DragonflyWarrior {
++ DragonflyWarrior(name : string)
++ Attack(hero : Hero) : void
+}
+
+Bug <|-- BugWarrior
+Warrior <|.. BugWarrior
+class BugWarrior {
++ BugWarrior(name : string)
++ Attack(hero : Hero) : void
+}
+
+Bug <|-- BugMedic
+Medic <|.. BugMedic
+class BugMedic {
++ BugMedic(name : string)
++ Heal(hero : Hero) : void
+}
+
+@enduml

@@ -4,9 +4,9 @@ public class DragonflyMedic : Dragonfly, IMedic
 {
     private const int HEALTH_RATE = 75;
 
-    public DragonflyMedic(string name) : base(name)
-    {
-    }
+    public int HealRate { get; init; }
+
+    public DragonflyMedic(string name) : base(name) => this.HealRate = HEALTH_RATE;
 
     public void Heal(Hero hero) => hero.Health += HEALTH_RATE;
 }

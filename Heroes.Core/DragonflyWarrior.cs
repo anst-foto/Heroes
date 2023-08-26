@@ -3,9 +3,9 @@
 public class DragonflyWarrior : Dragonfly, IWarrior
 {
     private const int DAMAGE_RATE = 75;
-    public int DamageRate { get; init; }
+    public int Damage { get; init; }
 
-    public DragonflyWarrior(string name) : base(name) => DamageRate = DAMAGE_RATE;
+    public DragonflyWarrior(string name) : base(name) => this.Damage = DAMAGE_RATE;
 
-    public void Attack(Hero hero) => hero.Health -= DamageRate;
+    public void Attack(Hero hero) => hero.Health -= this.Damage;
 }

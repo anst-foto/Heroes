@@ -2,6 +2,8 @@
 
 public abstract class Hero
 {
+    private readonly int maxHealth;
+
     public string Name { get; init; }
 
     private int health;
@@ -14,6 +16,14 @@ public abstract class Hero
             {
                 this.health = 0;
             }
+            else if (value > this.maxHealth)
+            {
+                this.health = this.maxHealth;
+            }
+            else
+            {
+                this.health = value;
+            }
         }
     }
 
@@ -21,5 +31,6 @@ public abstract class Hero
     {
         this.health = health;
         this.Name = name;
+        this.maxHealth = health;
     }
 }

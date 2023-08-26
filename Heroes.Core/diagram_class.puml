@@ -16,11 +16,13 @@ abstract class Dragonfly {
 
 Hero <-- Medic
 interface Medic {
++ {abstract} HealRate : int
 + {abstract} Heal(hero : Hero) : void
 }
 
 Hero <-- Warrior
 interface Warrior {
++ {abstract} Damage : int
 + {abstract} Attack(hero : Hero) : void
 }
 
@@ -33,6 +35,8 @@ abstract class Bug {
 Dragonfly <|-- DragonflyMedic
 Medic <|.. DragonflyMedic
 class DragonflyMedic {
+- {static} HEALTH_RATE : int
++ HealRate : int
 + DragonflyMedic(name : string)
 + Heal(hero : Hero) : void
 }
@@ -40,6 +44,8 @@ class DragonflyMedic {
 Dragonfly <|-- DragonflyWarrior
 Warrior <|.. DragonflyWarrior
 class DragonflyWarrior {
+- {static} DAMAGE_RATE : int
++ Damage : int
 + DragonflyWarrior(name : string)
 + Attack(hero : Hero) : void
 }
@@ -47,6 +53,8 @@ class DragonflyWarrior {
 Bug <|-- BugWarrior
 Warrior <|.. BugWarrior
 class BugWarrior {
+- {static} DAMAGE_RATE : int
++ Damage : int
 + BugWarrior(name : string)
 + Attack(hero : Hero) : void
 }
@@ -54,6 +62,8 @@ class BugWarrior {
 Bug <|-- BugMedic
 Medic <|.. BugMedic
 class BugMedic {
+- {static} HEALTH_RATE : int
++ HealRate : int
 + BugMedic(name : string)
 + Heal(hero : Hero) : void
 }

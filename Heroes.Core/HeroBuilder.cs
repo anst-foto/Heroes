@@ -3,9 +3,9 @@
 using Bugs;
 using Dragonflies;
 
-public enum HeroType { Bug, Dragonfly }
+public enum HeroType { Default, Bug, Dragonfly }
 
-public enum SpecType { Medic, Warrior }
+public enum SpecType { Default, Medic, Warrior }
 
 public class HeroBuilder
 {
